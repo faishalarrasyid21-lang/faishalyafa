@@ -1,0 +1,8 @@
+Flask>=2.0
+pandas
+plotly
+numpy
+Flask>=2.0
+pandas
+plotly
+numpy

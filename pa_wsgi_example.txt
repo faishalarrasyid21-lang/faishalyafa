@@ -1,0 +1,21 @@
+# PythonAnywhere WSGI example
+# Copy the contents below into the WSGI configuration file for your web app
+
+import sys
+import os
+
+# change this to your pythonanywhere username
+USER = 'yourusername'
+project_home = f'/home/{USER}/netflix_app'  # or the folder name you uploaded
+
+if project_home not in sys.path:
+    sys.path.insert(0, project_home)
+
+# Activate virtualenv (optional if configured in Web tab)
+activate_this = os.path.join(project_home, 'venv', 'bin', 'activate_this.py')
+if os.path.exists(activate_this):
+    with open(activate_this) as f:
+        exec(f.read(), {'__file__': activate_this})
+
+# Import the Flask app (app.py must expose `app`)
+from app import app as application
